@@ -1,0 +1,21 @@
+---
+title: "Computational Genomics with R"
+output: html_notebook
+---
+```{r}
+library(qvalue)
+data(hedenfalk)
+
+qvalues <- qvalue(hedenfalk$p)$q
+bonf.pval=p.adjust(hedenfalk$p,method ="bonferroni")
+fdr.adj.pval=p.adjust(hedenfalk$p,method ="fdr")
+
+plot(hedenfalk$p,qvalues,pch=19,ylim=c(0,1),
+     xlab="raw P-values",ylab="adjusted P-values")
+points(hedenfalk$p,bonf.pval,pch=19,col="red")
+points(hedenfalk$p,fdr.adj.pval,pch=19,col="blue")
+legend("bottomright",legend=c("q-value","FDR (BH)","Bonferroni"),
+       fill=c("black","blue","red"))
+```
+
+

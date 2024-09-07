@@ -17,5 +17,14 @@ points(hedenfalk$p,fdr.adj.pval,pch=19,col="blue")
 legend("bottomright",legend=c("q-value","FDR (BH)","Bonferroni"),
        fill=c("black","blue","red"))
 ```
+# 3.4.1 How to summarize collection of data points: The idea behind statistical distributions   
+1. Calculate the means and variances of the rows of the following simulated data set, and plot the distributions of means and variances using hist() and boxplot() functions. [Difficulty: Beginner/Intermediate]   
+```{r}
+set.seed(100)
+
+#sample data matrix from normal distribution
+gset=rnorm(600,mean=200,sd=70)
+data=matrix(gset,ncol=6)
+```
 
 

@@ -36,12 +36,13 @@ boxplot(data_variances_row)
 2. Using the data generated above, calculate the standard deviation of the distribution of the means using the sd() function. Compare that to the expected standard error obtained from the central limit theorem keeping in mind the population parameters were σ=70 and n=6. How does the estimate from the random samples change if we simulate more data with `data=matrix(rnorm(6000,mean=200,sd=70),ncol=6)`? [Difficulty: Beginner/Intermediate]   
 ```{r, label = problem-2}
 sd_means_dist <- sd(data_means_row)
-print(sd_means_dist / sqrt(100))
+print(sd_means_dist)
+print(70 / sqrt(6))
 
 data2=matrix(rnorm(6000,mean=200,sd=70),ncol=6)
 data2_means_row <- apply(data2, 1, mean)
 sd2_means_dist <- sd(data2_means_row)
-print(sd2_means_dist / sqrt(100))
-print("When the n is made 10x bigger, the standard deviation shrinks by 0.02.")
+print(sd2_means_dist)
+print("When the n is made 10x bigger, the standard deviation increases by around 0.2.")
 ```
 

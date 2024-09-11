@@ -45,4 +45,13 @@ sd2_means_dist <- sd(data2_means_row)
 print(sd2_means_dist)
 print("When the n is made 10x bigger, the standard deviation increases by around 0.2.")
 ```
+3. Simulate 30 random variables using the rpois() function. Do this 1000 times and calculate the mean of each sample. Plot the sampling distributions of the means using a histogram. Get the 2.5th and 97.5th percentiles of the distribution. [Difficulty: Beginner/Intermediate]   
+```{r, label = problem-3}
+means_poisson <- c()
+for (n in 1:1000) {
+  means_poisson[n] <- mean(rpois(30, 1))
+}
+hist(means_poisson)
+print(quantile(means_poisson, probs = c(0.025, 0.975)))
+```
 

@@ -54,4 +54,15 @@ for (n in 1:1000) {
 hist(means_poisson)
 print(quantile(means_poisson, probs = c(0.025, 0.975)))
 ```
+4. Use the t.test() function to calculate confidence intervals of the mean on the first random sample pois1 simulated from the rpois() function below. [Difficulty: Intermediate]
+```{r, label = problem-4}
+#HINT
+set.seed(100)
+
+#sample 30 values from poisson dist with lamda paramater =30
+pois1=rpois(30,lambda=5)
+
+my_ttest <- t.test(pois1, alternative = "t", mu = 5)
+my_ttest
+```
 
